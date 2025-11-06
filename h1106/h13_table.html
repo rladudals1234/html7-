@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>테이블</title>
+    <style>
+        *{padding:0;margin:0;}
+        table,th,td{
+            border-collapse: collapse;
+        }
+        table{
+            border-top :2px solid #737373;
+            width: 1450px;
+            height: 160px;
+            margin: 0 auto;
+        }
+        th,td{
+            width: 100px;
+            height: 70px;
+            text-align: center;
+            border: 1px solid #d9d9d9;
+            color: #666666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        span{
+            color: #6E3F89;
+        }
+        th{
+            font-size: 16px;
+            background-color: #e4f4ff;
+            font-weight: 600;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <colgroup>
+                <col width="200px">
+                <col width="350px">
+                <col width="200px">
+                <col width="350px">
+                <col width="350px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="5">
+                    HG PM BIM 서비스범위
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">사업<br>계획단계</td>
+                    <td>설계단계</td>
+                    <td rowspan="2">입찰<br>준비단계</td>
+                    <td>시공단계</td>
+                    <td>유지관리<br>단계</td>
+                </tr>
+                <tr>
+                    <td>
+                    <div>
+                        설계사<br><span>BIM TEAM</span>
+                    </div>
+                    </td>
+                    <td>
+                    <div>
+                        시공사<br><span>BIM TEAM</span>
+                    </div>
+                    </td>
+                    <td>
+                    <div>
+                        발주처<br><span>F/M TEAM</span>
+                    </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
