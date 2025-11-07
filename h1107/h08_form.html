@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form태그</title>
+    <script>
+        function btn1(){
+            id = document.getElementById("user_id");
+            pw = document.getElementById("pw");
+            if(id.value != "" && pw.value != ""){
+                alert("h01페이지로 이동합니다.");
+                alert("id 입력된 값 : "+id.value);
+                frm.submit();
+            }else if(id.value == ""){
+                id.focus();
+                alert("아이디를 입력하셔야 합니다.")
+            }else if(pw.value == ""){
+                pw.focus();
+                alert("패스워드를 입력하셔야 합니다.")
+            }else{
+                id.focus();
+                alert("아이디 또는 패스워드를 입력하셔야 합니다.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- form : 정보를 입력하는 태그, action : 이동주소, method : 전송방식 -->
+    <!-- method=get : url에 정보를 노출, post : 숨겨서 보냄. -->
+    <form action="h01.html" method="post" name="frm">
+        <label for="user_id">* 아이디</label>
+        <input type="text" name="id" id="user_id" placeholder="아이디를 입력해주세요"/>
+        <br>
+        <label for="pw">* 패스워드</label>
+        <input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요"/>
+        <br>
+        <label for="m">남자</label>
+        <input type="radio" id="m" name="gender" value="남자" checked="true"/>
+        <label for="w">여자</label>
+        <input type="radio" id="w" name="gender" value="여자"/>
+        <input type="button" onclick="btn1()" value="로그인"/>
+    </form>
+</body>
+</html>

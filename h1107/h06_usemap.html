@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>area 태그</title>
+</head>
+<body>
+    <h2>이벤트 - area태그 사용하기</h2>
+    <!-- <a href="https://www.samsung.com/" target="_blank">
+        <img src="image/event01.jpg">
+    </a> -->
+    <img src="image/event01.jpg" usemap="#s_event">
+    <!-- 이미지에 area링크를 적용 -->
+    <!-- shape:모양 - rect(사각형),circle(원),poly(다각형) coords(위치)-->
+    <map name="s_event">
+        <area shape="rect" coords="110,370,610,580" href="https://www.samsung.com/" target="_blank">
+        <area shape="rect" coords="65,643,263,854" href="https://www.samsung.com/sec/refrigerators/all-refrigerators/" target="_blank">
+        <area shape="rect" coords="264,648,458,854" href="https://www.samsung.com/sec/washers-and-dryers/all-washers-and-dryers/" target="_blank">
+        <area shape="circle" coords="550,750,100" href="https://www.samsung.com/sec/tvs/all-tvs/" target="_blank">
+        <!-- <area shape="rect" coords="69,856,261,1068" href="https://www.samsung.com/sec/smartphones/all-smartphones/" target="_blank"> -->
+         <area shape="poly" coords="367,855,68,1065,650,1065" href="https://www.samsung.com/sec/smartphones/all-smartphones/" target="_blank">
+        <area shape="rect" coords="264,857,458,1064" href="https://www.samsung.com/sec/galaxybook/all-galaxybook/" target="_blank">
+        <area shape="rect" coords="459,859,654,1064" href="https://www.samsung.com/sec/tvs/all-tvs/" target="_blank">
+    </map>
+</body>
+</html>

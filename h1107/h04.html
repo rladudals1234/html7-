@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>요안도라 객실</title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+            /* border-collapse: collapse; */
+        }
+        th,td{
+            width: 180px;
+            height: 40px;
+        }
+        thead,tfoot th{
+            background: #efefef;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <!-- a:링크연결, href속성:주소 -->
+        <li><a href="https://www.daum.net" target="_blank">다음</a></li>
+        <li><a href="https://www.naver.com">네이버</a></li>
+        <li><a href="https://www.google.com">구글</a></li>
+        <li><a href="https://www.coupang.com">쿠팡</a></li>
+        <li><a href="https://www.kakao.com">카카오</a></li>
+        <li><a href="https://www.ms.com">ms</a></li>
+        <li><a href="image/img1.jpg" download>다운로드</a></li>
+    </ul>
+    <hr>
+    <img src="image/img1.jpg">
+    <hr>
+    <div style="width: 731px;text-align: center;">요안도라 객실</div>
+    <table>
+        <!-- 열을 기준으로 적용 -->
+        <!-- <colgroup>
+            <col width="50px" style="background: yellow;">
+            <col width="100px">
+            <col width="250px">
+            <col width="400px">
+        </colgroup> -->
+        <thead>
+            <tr>
+                <th>방 이름</th>
+                <th>대상</th>
+                <th>크기</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>유채방</th>
+                <td>여성 도미토리</td>
+                <td rowspan="3">4인실</td>
+                <td rowspan="4">1인 20,000원</td>
+            </tr>
+            <tr>
+                <th rowspan="2">동백방</th>
+                <td>동성 도미토리</td>
+            </tr>
+            <tr>
+                <td>가족1팀</td>
+            </tr>
+            <tr>
+                <th>천해향방</th>
+                <td>-</td>
+                <td>2인실</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">
+                    바깥채 전체를 랜트합니다.
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

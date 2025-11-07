@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0216)https://logon.skbroadband.com:7443/3rd/signup02.jsp?NONCE=oiqmrcGMZSRgpMFD72TmtMbkE5yoWR9q0DZaXqn1kTF4o%2FRT00ZR4PGDrCmP5m1cne%2FYi5iS5ZiPL%2FfT6J0MlA%3D%3D&UURL=https%3A%2F%2Flogon.skbroadband.com%3A7443%2Fnls%2Ffcs -->
+<html lang="en" style="--vh: 953px;"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK브로드밴드</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://logon.skbroadband.com:7443/3rd/20221027_biz/pc/img/icon/favicon.ico">
+
+    <!-- sub css -->
+    <link rel="stylesheet" href="./SK_files/common.css">
+    <link rel="stylesheet" href="./SK_files/sub.css">
+    <!-- //sub css -->
+
+<style type="text/css">
+.ime_en {-webkit-ime-mode:inactive; -moz-ime-mode:inactive; -ms-ime-mode:inactive; ime-mode:inactive;}
+</style>
+
+<script type="text/javascript" src="./SK_files/login.js"></script>
+<script type="text/javascript" src="./SK_files/popup.js"></script>
+
+<script language="javascript">
+//
+// captcha 
+//
+document.domain = 'skbroadband.com';
+
+function pwReset() {
+    document.getElementById('captcha').contentWindow.location.reload();
+}
+
+function chkMainValue() {
+    if (document.submitform1.userid.value == "") {
+        alert("아이디를 입력하세요");
+        document.submitform1.userid.select();
+        return false;
+    }
+    else if (document.submitform1.password.value == "") {
+        alert("비밀번호를 입력하세요");
+        document.submitform1.password.select();
+        return false;
+    }
+    else if (checkID(document.submitform1.userid.value) == false) {
+        alert('아이디는 특수문자를 사용하실 수 없습니다.');
+        document.submitform1.userid.select();
+        return false;
+    }
+    else {
+        saveidCookie();
+    }
+
+    return true;
+}
+
+function tmpSubmit() {
+    captcha.check('LOGON');
+}
+
+function loginSubmit() {
+    document.submitform1.submit();
+}
+
+function chkKey() {
+    if (event.keyCode == 13) {
+        if (document.submitform1.userid.value.length < 1) {
+            document.submitform1.userid.select();
+            return false;
+        }
+        else if (document.submitform1.password.value.length < 1) {
+            document.submitform1.password.select();
+            return false;
+        }
+        else {
+            if (chkMainValue()) {
+                captcha.check('LOGON');
+            }
+        }
+    }
+    else
+        return false;
+}
+
+function useridKeyup(fm) {
+    var pattern = /[^(a-zA-Z0-9)]/;
+    if (pattern.test(fm.userid.value)) {
+        alert("아이디는 영문,숫자만 허용합니다.");
+        fm.userid.value = "";
+        fm.userid.focus();
+        return false;
+    }
+
+    fm.userid.value = fm.userid.value.toLowerCase();
+}
+
+function MemberSubFormCheck() {
+    if (document.submitform1.userid.value == "") {
+        alert("아이디를 입력하세요");
+        document.submitform1.userid.select();
+        return false;
+    }
+    else if (document.submitform1.password.value == "") {
+        alert("비밀번호를 입력하세요");
+        document.submitform1.password.select();
+        return false;
+    }
+    else if (checkID(document.submitform1.userid.value) == false) {
+        alert('아이디는 특수문자를 사용하실 수 없습니다.');
+        document.submitform1.userid.select();
+        return false;
+    }
+    else {
+        saveidCookie();
+    }
+
+    document.submitform1.submit();
+}
+
+function checkkey() {
+    if (event.keyCode == 13) {
+        if (document.submitform1.userid.value.length < 1) {
+            document.submitform1.userid.select();
+            return false;
+        }
+        else if (document.submitform1.password.value.length < 1) {
+            document.submitform1.password.select();
+            return false;
+        }
+        else {
+            MemberSubFormCheck();
+        }
+    }
+    else
+        return false;
+}
+</script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      //CD6 로그인 여부 Y / N
+      //CD7 언어코드 (한국어일 경우 ‘kr’, 영문 페이지일 경우 ‘en’, 중문페이지일 경우 ‘cn’, 일문 페이지일 경우 ‘jp’)
+      var checkSKBGTM_yn = "N";
+      checkSKBGTM_yn = "N";
+      dataLayer = [{ CD6: checkSKBGTM_yn, CD7: "kr", CD8: "" }];
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f[removed].insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KZHWCR7");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body onLoad="getssoid();">
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZHWCR7" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Skip to Navigation -->
+    <div id="skipnavi">
+      <a href="#">본문 바로가기</a>
+      <a href="#">주메뉴 바로가기</a>
+    </div>
+    <!-- //Skip to Navigation -->
+
+    <div class="wrap sub_wrap">
+      <div class="section">
+        <div class="ut-header pb-60">
+          <a href="http://biz.skbroadband.com/"><img class="ut-logo" src="SK_files/logo.png" alt="sk브로드밴드" /></a>
+          <h2 class="ut-tit">SK브로드밴드에 오신 것을 환영합니다.</h2>
+          <div class="ut-subtit">서비스를 이용하시려면 로그인 해주세요.</div>
+        </div>
+        <div class="ut-content">
+
+          <div class="input_listbox">
+            <div class="input_list">
+
+              <form onsubmit="return false;" name="submitform1" autocomplete="off" method="post" action="idPasswordLogin.jsp?UURL=https%3A%2F%2Flogon.skbroadband.com%3A7443%2Fnls%2Ffcs&NONCE=oiqmrcGMZSRgpMFD72TmtMbkE5yoWR9q0DZaXqn1kTF4o%2FRT00ZR4PGDrCmP5m1cne%2FYi5iS5ZiPL%2FfT6J0MlA%3D%3D&InitechEamNoCacheNonce=%2FBxDGybRuw%2BkT7t7qffsHw%3D%3D&lptype=CY04">
+                <input type="hidden" name="fromUrl" value="cyber.skbroadband.com" />
+                <input type="hidden" name="fromFullUrl" value="http://cyber.skbroadband.com/myb/ess-login/login.do?UURL=https://biz.skbroadband.com/LoginProc.do" />
+
+              <div class="input_box">
+                <label class="label" for="ut_input_Id1">아이디</label>
+                <div class="input_inner">
+                  <input type="text" id="ut_input_Id1" placeholder="" name="userid" maxlength="20" onKeyUp="checkkey();useridKeyup(submitform1);" class="ime_en" />
+                  <button type="button" class="input_clear" title="초기화"></button>
+                </div>
+              </div>
+
+              <div class="input_box">
+                <label class="label" for="ut_input_password1">비밀번호</label>
+                <div class="input_inner">
+                  <input type="password" id="ut_input_password1" placeholder="" name="password" maxlength="20" onKeyUp="checkkey();" />
+                  <button type="button" class="input_clear" title="초기화"></button>
+                </div>
+              </div>
+
+              <div class="input_box">
+                <label class="label hide" for="input_Id3">아이디 저장</label>
+                <div class="input_inner">
+                  <div class="checkbox_wrap">
+                    <div class="checkbox">
+                      <input type="checkbox" name="idcheck" id="checkbox_save_id" />
+                      <label for="checkbox_save_id">아이디 저장</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="butn_wrap right">
+                <!-- 1017 achromatic클래스 삭제 -->
+                <button type="button" class="butn solid large ut-butn" onClick="MemberSubFormCheck();">로그인</button>
+              </div>
+
+              <div class="butn_wrap right">
+                <a href="https://cyber.skbroadband.com/myb/user/biz/join.do" type="button" class="butn link">회원가입</a>
+                <a href="https://cyber.skbroadband.com/myb/user/biz/find-id-password.do" type="button" class="butn link">아이디/비밀번호 찾기</a>
+              </div>
+
+              </form>
+
+            </div>
+          </div>
+
+          <div class="info_box">
+            <div class="info_panel">
+              <div class="info_txt">
+                <ul class="info_txt-list circle">
+                  <li class="info_txt-item">고객님의 소중한 정보 보호를 위해 로그인 시 보안문자 입력항목이 추가되었습니다.</li>
+                  <li class="info_txt-item"><span class="red">비밀번호 입력 5회 이상 오류 시 로그인이 제한</span>되며, 비밀번호 재설정을 통해 새로운 비밀번호를 설정하셔야 로그인을 하실 수 있습니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- library js -->
+    <script src="./SK_files/jquery-1.12.4.min.js"></script>
+    <script src="./SK_files/jquery-ui.min.js"></script>
+    <script src="./SK_files/datepicker.js"></script>
+    <script src="./SK_files/datepicker.min.js"></script>
+    <script src="./SK_files/swiper-bundle.min.js"></script>
+    <script src="./SK_files/jquery.mCustomScrollbar.js"></script>
+    <!-- //library js -->
+    <!-- base js -->
+    <script src="./SK_files/common.js"></script>
+    <script src="./SK_files/sub.js"></script>
+    <!-- //base js -->
+  
+
+</body></html>
