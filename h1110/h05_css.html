@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트관련 css</title>
+    <style>
+        /* 구글웹폰트(무료) */
+        /*@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap');*/
+        /* 아래에 포함 */
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            color: #333;
+        }
+        div {
+            width: 600px;
+            margin: 0 auto;
+        }
+        /* font-size : 글자크기 */
+        h3 {
+            font-size: 40px;
+            text-align: center;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            /*font-weight: 500;*/
+            /*font-family: "Jua", sans-serif;*/
+            /*font-family: "Nanum Gothic", sans-serif;*/
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 600;
+            /* 두께는 100~900까지 적용가능 */
+            font-style: normal;
+            font-optical-sizing: auto;
+        }
+        h4 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 70px;
+            margin-bottom: 30px;
+        }
+        span {
+            font-size: 16px;
+            color: #96694c;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            text-align: center;
+        }
+        li {
+            width: 130px;
+            height: 57px;
+            border: 1px solid #ddd;
+            line-height: 55px;
+        }
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        input {
+            width: 600px;
+            height: 50px;
+            border: 1px solid #ddd;
+            padding-left: 15px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        #u_txt>li {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .txt{
+            display: inline-block;
+            display: flex;
+        }
+        .btn_zipcode {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 115px;
+            height: 51px;
+            padding: 18px 0 16px;
+            font-weight: 500;
+            text-align: center;
+            box-sizing: border-box;
+            text-decoration: none;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .btn_verify {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 115px;
+            height: 51px;
+            padding: 18px 0 16px;
+            font-weight: 500;
+            text-align: center;
+            box-sizing: border-box;
+            text-decoration: none;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>회원가입</h3>
+        <h4>회원정보 <span>(* 필수입력)</span></h4>
+        <ul>
+            <li>분양</li>
+            <li>사이버</li>
+            <li>임직원</li>
+            <li>MOU</li>
+        </ul>
+        <div>
+            <!-- <ul>
+                <li>
+                    <label for="u_id">* 아이디</label>
+                    <input type="text" id="u_id">
+                </li>
+                <li>
+                    <label for="u_pw">* 비밀번호</label>
+                    <input type="password" id="u_pw">
+                </li>
+                <li>
+                    <label for="u_pw2">* 비밀번호확인</label>
+                    <input type="password" id="u_pw2">
+                </li>
+                <li>
+                    <label for="u_name">* 이름</label>
+                    <input type="text" id="u_name" disabled>
+                    <a href="javascript:;" class="btn_verify" role="button">휴대폰 인증</a><br>
+                </li>
+            </ul> -->
+            <label for="u_id">* 아이디</label>
+            <div class="txt">
+                <input type="text" id="u_id">
+            </div>
+            <label for="u_pw">* 비밀번호</label>
+            <div class="txt">
+                <input type="password" id="u_pw">
+            </div>
+            <label for="u_pw2">* 비밀번호확인</label>
+            <div class="txt">
+                <input type="password" id="u_pw2">
+            </div>
+            <label for="u_name">* 이름</label>
+            <div class="txt">
+                <input type="text" id="u_name" disabled>
+                <a href="javascript:;" class="btn_verify" role="button">휴대폰 인증</a><br>
+            </div>
+            <label for="u_email">* 이메일</label>
+            <div class="txt">
+                <input type="text" id="u_email">@<input type="text" id="u_email2">
+                <select id="u_email3">
+                    <optgroup>
+                        <option value="">직접입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </optgroup>
+                </select>
+            </div>
+            <label for="u_address">* 주소</label>
+            <div class="txt">
+                <input type="text" id="u_address">
+                <a href="javascript:;" class="btn_zipcode" id="" role="button">우편번호</a>
+                <input type="text" id="u_address2" name="u_address2" class="input" disabled="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

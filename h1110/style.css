@@ -1,0 +1,8 @@
+/* 크기, 색상, 모양, 위치, 정렬 모아 둔곳 */
+/* font-size : 글자 크기, text-align : 글자 정렬 */
+p {
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+}

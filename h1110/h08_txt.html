@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트</title>
+    <style>
+        *{padding:0;margin:0;}
+        h2{
+            width: 600px;
+            height: 30px;
+            margin-bottom: 100px;
+            border:1px solid black;
+            white-space: nowrap;    /*칸을 벗어나도 줄단락을 바꾸지 않음처리*/
+            overflow: hidden;   /*칸을 넘쳐나는 부분을 숨김*/
+            text-overflow: ellipsis;    /* 말줄임표: 칸 범위 벗어나면'...'으로 표시 */
+        }
+        h2:hover{
+            text-overflow: clip;
+            overflow: visible;
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+            text-align: justify; /*양쪽정렬*/
+            /*overflow: hidden;*/
+            text-overflow: ellipsis;    /*잘려서 나옴*/
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>M. 에딥 구롤(M. Edip Gurol) 미국 하버드대학교 박사 연구팀이 평균 연령 75세 뇌출혈 환자 1600명을 분석한 결과, 하루 세 잔 이상 술을 마시는 사람은 그렇지 않은 사람보다 평균 11년 이른 나이에 뇌출혈을 겪을 가능성이 큰 것으로 나타났다. 이들은 출혈 범위도 더 넓고 회복 예후 역시 좋지 않았다.</h2>
+    <p>퇴근 후 마시는 한 잔의 술은 하루의 피로를 달래는 작은 위안이 된다. 하지만 그 잔이 쌓이면 뇌가 경고 신호를 보낼지 모른다. 하루 세 잔 이상 마실 경우 단순한 숙취를 넘어 뇌혈관을 손상시키고 뇌출혈 발생 시기를 앞당길 수 있다는 연구 결과가 나왔다.</p>
+</body>
+</html>

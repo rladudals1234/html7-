@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경패턴</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        div{
+            width: 700px;
+            height: 3000px;
+            border: 5px solid black;
+            /*background: url('images/apple.png') no-repeat;*/
+            background: url('images/ico_top.svg') no-repeat 15px 15px;
+            background-attachment: fixed;   /*top버튼과 같이 스크롤 이동할때 같이 이동*/
+        }
+        span{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+            /*background: url('images/ico_top.svg') no-repeat 15px 15px;*/
+            /*position:fixed;*/
+            left:750px;
+            /*background-attachment: fixed;*/  /*position:fixed;없애고*/
+        }
+    </style>
+</head>
+<body>
+    <h1 id="top">메인페이지</h1>
+    <div>
+        <!-- <span></span> -->
+    </div>
+</body>
+</html>

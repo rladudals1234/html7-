@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css수업</title>
+    <link type="text/css" rel="stylesheet" href="style.css">    <!-- 외부스타일 시트 -->
+    <style>
+        /* 여기는 내부 스타일 시트 */
+        /* 크기, 색상, 모양, 위치, 정렬 모아 둔곳 */
+        /* font-size : 글자 크기, text-align : 글자 정렬 */
+        /*p {
+            text-align: center;
+        }
+        h1{
+            font-size: 40px;
+        }*/
+        /* 스타일 적용은 코드순서상 제일 마지막(여기는 내부스타일)이 적용된다. */
+        p{
+            text-align: right;
+        }
+        /* '*'(전체선택자)는 모든 곳에 적용 */
+        *{
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:red">안녕하세요</h1><!-- 유지보수 수정하기 어려우니 왠만하면 사용X -->
+    <p>안녕하세요</p>
+</body>
+</html>
