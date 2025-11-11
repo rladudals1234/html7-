@@ -1,0 +1,358 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하나투어</title>
+    <style>
+        *{padding:0;margin:0;}
+        #nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #nav>ul{
+            list-style: none;
+        }
+        #nav>ul>li{
+            display: inline-block;
+            width: 294px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            background-color: #f5f5f5;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        #nav>ul>li:hover{
+            border: 1px solid #5e2bb8;
+            color: #5e2bb8;
+            border-radius: 8px;
+            font-weight: 700;
+            background-color: #f6f2fb;
+        }
+        .card-list-wrap {
+            display: flex;
+            grid-gap: 40px;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto 20px;
+        }
+        .medium .card-wrap {
+            width: 270px;
+            flex: 0 auto;
+        }
+        img{
+            width: 250px;
+            height: 230px;
+            border-radius: 8px;
+        }
+        .card-wrap{
+            margin-top: 15px;
+            display: inline-block;
+        }
+        .card-wrap .section .price-group .price strong {
+            display: inline-block;
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: 700;
+            vertical-align: bottom;
+        }
+        .card-wrap .section .option-group span+span {
+            margin-left: 8px;
+            padding-left: 8px;
+        }
+        .card-wrap .section .option-group span+span:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background: #ddd;
+        }
+        .medium .card-wrap .section .option-group {
+            margin-bottom: 2px;
+        }
+        .medium .card-wrap .section .price-group {
+            margin-bottom: 6px;
+        }
+        .card-wrap .section .tag-group span {
+            display: inline-block;
+            height: auto;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 700;
+            color: #682fca;
+            padding: 0;
+        }
+        .card-wrap .section .option-group span {
+            position: relative;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 25px;
+            color: #666;
+            letter-spacing: -.56px;
+        }
+        .card-wrap .section .text-group p {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 26px;
+            color: #111;
+        }
+        .benefit-group .point {
+            color: #ff299c;
+        }
+        .benefit-group span {
+            display: inline-block;
+            line-height: 24px;
+            padding: 0 8px;
+            background: #f2f2f3;
+            font-size: 13px;
+            font-weight: 700;
+            color: #7d7886;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li>동남아</li>
+            <li>중국</li>
+            <li>일본</li>
+            <li>유럽</li>
+        </ul>
+    </div>
+    <div class="card-list-wrap medium">
+        <div class="card-wrap"><div class="section static"><div class="section"><div class="label-group"><span class="label point"></span></div> <div class="img-group"><img src="images/img05.png" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>하롱베이 데이크루즈&amp;뷔페</span></div> <div class="text-group"><p class="eps2">
+                    하노이/하롱베이 4,5,6일 #베스트셀러
+        </p></div> <div class="option-group"><span>인천/부산</span><span>4,5,6일</span></div> <div class="price-group"><div class="price-tag"></div> <span class="price"><strong>399,000</strong>원~
+        </span></div> <div class="benefit-group"><span class="point">호텔 업그레이드</span> <span>하노이 핵심관광</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img06.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>야류 해상 국립공원</span></div> <div class="text-group"><p class="eps2">
+                    타이베이/야류/지우펀 3,4일 #천등 날리기
+        </p></div> <div class="option-group"><span>인천/김포/청주</span><span>3,4일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>509,900</strong>원~
+        </span></div> <div class="benefit-group"> <span>먹거리 가득 야시장</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img07.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>👍 베트남 베스트셀러</span></div> <div class="text-group"><p class="eps2">
+                다낭/호이안 5,6일 #5성 추천호텔 #바나힐
+        </p></div> <div class="option-group"><span>인천/청주</span><span>5,6일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>289,000</strong>원~
+        </span></div> <div class="benefit-group"><span class="point">한정특가</span> <span>맛있는 다낭여행</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img08.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>아름다운 물빛의 산호섬</span></div> <div class="text-group"><p class="eps2">
+                푸껫 5일 #가성비 #4성급호텔 #팡아만 #야시장투어
+        </p></div> <div class="option-group"><span>인천</span><span>5일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>669,000</strong>원~
+        </span></div> <div class="benefit-group"> <span>타이전통지압</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img09.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>🎁취향저격 베스트셀러 특가모음</span></div> <div class="text-group"><p class="eps2">
+                나트랑/달랏 5일 #미식여행or해변투어or힐링여행
+        </p></div> <div class="option-group"><span>인천/부산/대구/청주</span><span>5일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>289,000</strong>원~
+        </span></div> <div class="benefit-group"> <span>나트랑 5성호텔UP</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img10.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>코끼리 먹이주기 체험</span></div> <div class="text-group"><p class="eps2">
+                치앙마이/치앙라이 5일#가성비추천 #4성급호텔
+        </p></div> <div class="option-group"><span>인천</span><span>5일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>479,000</strong>원~
+        </span></div> <div class="benefit-group"> <span>청/백/금 3色 사원</span></div></div></div>
+
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img11.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>도심속 자연&amp;미식&amp;액티비티</span></div> <div class="text-group"><p class="eps2">
+                싱가포르 5일 #전일관광or1일자유
+        </p></div> <div class="option-group"><span>인천/부산</span><span>5일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>868,600</strong>원~
+        </span></div> <div class="benefit-group"><span class="point">NO쇼핑</span> <span>가든스바이더베이&amp;센토사</span></div></div></div>
+        
+        <div class="card-wrap"><div class="section static"> <div class="section"><div class="label-group">  <span class="label point"> </span></div> <div class="img-group"><img src="images/img12.jpg" title="" data-src="" alt=""></div></div></div> <div class="section"><div class="tag-group"><span>남쪽으로 떠나는 힐링여행</span></div> <div class="text-group"><p class="eps2">
+                [만남(滿南)] 가오슝 3,4일 #대만남부투어 #타이난
+        </p></div> <div class="option-group"><span>인천/김포</span><span>3,4일</span></div> <div class="price-group"><div class="price-tag"></div>  <span class="price"><strong>549,900</strong>원~
+        </span></div> <div class="benefit-group"><span class="point">NO쇼핑</span> <span>대만 최남단 휴양지 컨딩 </span></div></div></div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        #nav{width:1200px; height:64px; margin:4px auto;
+            box-sizing: border-box;
+        }
+        #nav>ul{list-style: none; display: flex;}
+        #nav>ul>li{width:300px; height:64px; 
+         text-align: center;
+         font-size: 17px; color: #111; font-weight: 400;
+         background: #f5f5f5; border-left:1px solid white;
+         line-height: 64px; border-radius: 8px;
+        }
+        #nav>ul>li:hover{ border:1px solid #5e2bb8;
+          color:#5e2bb8; background: #f6f2fb;   font-weight: 700;
+        }
+        #section{ width:1200px; height:1100px; margin:15px auto;
+        display: flex; justify-content: space-between;
+        flex-wrap: wrap;
+        }
+        #article{ width:270px; height:476px; }
+        #article>#s_img{
+            width:270px; height:270px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        #article>#s_img>img{width:100%; height:100%; }
+        #article>#s_cont{width:270px; height:206px; 
+            margin-top:20px;      }
+        #article>#s_cont>h5{
+            font-size: 16px; font-weight: 700; color:#682fca;
+            margin-bottom:6px;
+        }
+        #article>#s_cont>h3{
+            font-size: 20px; font-weight: 500; color:#111;
+            margin-bottom: 4px;
+        }
+        #article>#s_cont>p{
+            font-size: 14px; font-weight: 400; color: #666;
+            letter-spacing: -0.56px;
+            margin-bottom:8px;
+        }
+        #article>#s_cont>p>span{color:#ddd; margin:0 8px; }
+        #article>#s_cont>h4{
+            font-size: 22px; font-weight: 700;
+        }
+        #article>#s_cont>h4>span{font-size: 18px; font-weight: 500;
+        color: #111;}
+        #article>#s_cont>span{
+            display: inline-block; font-size: 13px; font-weight: 700;
+            border-radius: 4px; margin:2px 0 0 2px;
+            padding:0 8px;
+              letter-spacing: -0.4px;
+            background: #f2f2f3; 
+        } 
+        #article>#s_cont>span:nth-of-type(1){color:#ff299c;}   
+        #article>#s_cont>span:nth-of-type(2){color:#7d7886;}   
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li>동남아</li>
+            <li>중국</li>
+            <li>일본</li>
+            <li>유럽</li>
+        </ul>
+    </div>
+    <div id="section">
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img05.png">
+            </div>
+            <div id="s_cont">
+                <h5>하롱베이 데이크루즈&뷔페</h5>
+                <h3>하노이/하롱베이 4,5,6일 #베스트셀러</h3>
+                <p>인천/부산<span>|</span>4,5,6일</p>
+                <h4>399,000<span>원~</span></h4>
+                <span>호텔 업그레이드</span>
+                <span>하노이 핵심관광</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img06.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>야류 해상 국립공원</h5>
+                <h3>타이베이/야류/지우펀 3,4일 #천등 날리기</h3>
+                <p>인천/김포/청주<span>|</span>3,4일</p>
+                <h4>509,900<span>원~</span></h4>
+                <span>먹거리 가득 야시장</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img07.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>👍 베트남 베스트셀러</h5>
+                <h3>다낭/호이안 5,6일 #5성 추천호텔 #바나힐</h3>
+                <p>인천/청주<span>|</span>5,6일</p>
+                <h4>289,000<span>원~</span></h4>
+                <span>한정특가</span>
+                <span>맛있는 다낭여행</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img08.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>아름다운 물빛의 산호섬</h5>
+                <h3>푸껫 5일 #가성비 #4성급호텔 #팡아만 #야시장투어</h3>
+                <p>인천<span>|</span>5일</p>
+                <h4>669,000<span>원~</span></h4>
+                <span>타이전통지압</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img09.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>하롱베이 데이크루즈&뷔페</h5>
+                <h3>하노이/하롱베이 4,5,6일 #베스트셀러</h3>
+                <p>인천/부산<span>|</span>4,5,6일</p>
+                <h4>399,000<span>원~</span></h4>
+                <span>호텔 업그레이드</span>
+                <span>하노이 핵심관광</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img10.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>하롱베이 데이크루즈&뷔페</h5>
+                <h3>하노이/하롱베이 4,5,6일 #베스트셀러</h3>
+                <p>인천/부산<span>|</span>4,5,6일</p>
+                <h4>399,000<span>원~</span></h4>
+                <span>호텔 업그레이드</span>
+                <span>하노이 핵심관광</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img11.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>하롱베이 데이크루즈&뷔페</h5>
+                <h3>하노이/하롱베이 4,5,6일 #베스트셀러</h3>
+                <p>인천/부산<span>|</span>4,5,6일</p>
+                <h4>399,000<span>원~</span></h4>
+                <span>호텔 업그레이드</span>
+                <span>하노이 핵심관광</span>
+            </div>
+        </div>
+        <div id="article">
+            <div id="s_img">
+                <img src="images/img12.jpg">
+            </div>
+            <div id="s_cont">
+                <h5>하롱베이 데이크루즈&뷔페</h5>
+                <h3>하노이/하롱베이 4,5,6일 #베스트셀러</h3>
+                <p>인천/부산<span>|</span>4,5,6일</p>
+                <h4>399,000<span>원~</span></h4>
+                <span>호텔 업그레이드</span>
+                <span>하노이 핵심관광</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        /*
+        1. 블록요소 : width,height지정가능, 옆 공간이 있어도 하단배치
+         - display:block, inline-block
+         - div, h1, h2, h3, p
+        2. 인라인요소 : width,height지정불가, 옆으로 배치
+         - form,img,span,a
+         - display:inline, inline-block
+        3. 인라인블록요소지정 : width,height지정가능, 옆으로 배치
+         - display:inline-block
+        */
+        *{margin: 0;padding: 0;}
+        span,div{
+            border: 8px solid black;
+        }
+        span{
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+        }
+        div{
+            width: 50%;
+            height: 100px;
+            /*display: inline;*/
+            margin: 30px;
+            box-sizing: border-box; /*선 두께까지 합해서 width,height 적용*/
+        }
+        #s02{
+            display: none;
+        }
+        #d02:hover{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a>aaa</a>
+    <a>bbb</a>
+    <a>ccc</a>
+    <span>1</span>
+    <span id="s02">2</span>
+    <span>3</span>
+    <div>11</div>
+    <br>
+    <div id="d02">22</div>
+    <div>33</div>
+</body>
+</html>
