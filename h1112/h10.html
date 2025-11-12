@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+    <style>
+        *{padding:0;margin:0;}
+        div{
+            width: 100%;
+            height: 650px;
+            overflow: hidden;
+        }
+        video{
+            width: 100%;
+            height: 656px;
+            object-fit: cover;
+        }
+        .test>h2{
+            position: absolute;
+            color: white;
+            font-size: 48px;
+            top: 40%;
+            left: 3%;
+        }
+        .test>p{
+            position: absolute;
+            color: white;
+            font-size: 18px;
+            top: 48%;
+            left: 3%;
+        }
+        .section{
+            width: 100%;
+            height: 100px;
+            background: pink;
+        }
+        .main{
+            width: 100%;
+            height: 464px;
+        }
+        .main>.m_left{
+            width: 50%;
+            height: 100%;
+            float: left;
+            background: url('images/nike-just-do-it.avif');
+            background-size: 100%;
+            display: inline-block;
+        }
+        .main>.m_right{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            /*float: right;*/
+            background: url('images/nike-just-do-it2.avif');
+            background-size: 100%;
+        }
+        /*.main>.m_left>h4{
+            color: white;
+            position: absolute;
+            top: 110%;
+            left: 3%;
+            font-size: 32px;
+            font-weight: 500;
+        }
+        .main>.m_left>.sale{
+            position: absolute;
+            top: 118%;
+            left: 3%;
+            font-size: 15px;
+            background: white;
+            width: 100px;
+            height: 40px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .main>.m_right>h4{
+            color: white;
+            position: absolute;
+            top: 110%;
+            left: 53%;
+            font-size: 32px;
+            font-weight: 500;
+        }
+        .main>.m_right>.sale{
+            position: absolute;
+            top: 118%;
+            left: 53%;
+            font-size: 15px;
+            background: white;
+            width: 100px;
+            height: 40px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }*/
+        .main h4{
+            color: white;
+            margin: 43% 5%;
+            font-size: 32px;
+            font-weight: 500;
+        }
+        .main .sale{
+            margin: 53% 5%;
+            font-size: 15px;
+            background: white;
+            width: 100px;
+            height: 40px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        footer{
+            width: 100%;
+            height: 500px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://youtu.be/Bcpu-jqAL6w?si=FyK20W4CH9d-WRMA 다운중 -->
+    <!-- div:100%, 650px; 나이키 동영상 전체화면에 출력 -->
+    <!-- 스우시 시리즈 푸퍼 패딩-->
+    <!-- 추위를 위한 설계, 움직임을 위한 디자인. -->
+    <!-- 스우시 시리즈 푸퍼 패딩 컬렉션을 소개합니다. -->
+    <div class="test">
+        <video src="images/WHY DO IT   NIKE.mp4" autoplay muted loop></video>
+        <h2>스우시 시리즈 푸퍼 패딩</h2>
+        <p>추위를 위한 설계, 움직임을 위한 디자인.<br>스우시 시리즈 푸퍼 패딩 컬렉션을 소개합니다.</p>
+    </div>
+    <!-- 동영상사이공백 -->
+    <div class="section"></div>
+    <!-- 이미지2개 -->
+    <div class="main">
+        <div class="m_left">
+            <h4>여성 겨울 의류</h4>
+            <div class="sale">구매하기</div>
+        </div>
+        <div class="m_right">
+            <h4>남성 겨울 의류</h4>
+            <div class="sale">구매하기</div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

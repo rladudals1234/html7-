@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{padding:0;margin:0;}
+        video{
+            width: 100%;
+            height: 900px;
+            object-fit: cover;
+        }
+        h2{
+            position: absolute;
+            top: 250px;
+            right: 100px;
+            color: white;
+            font-size: 5.0rem;
+            font-weight: 700;
+            line-height: 90%;
+            letter-spacing: -0.51rem;
+            text-align: right;
+
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .media{
+            width: 100%;
+            height: 700px;
+            border: 1px solid red;
+            overflow: hidden;   /* media클래스 태그안에 video태그의 width,height가 더 크면 잘라서 보여줌 */
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+        <video src="images/m1.mp4" autoplay muted loop></video>
+    </div>
+    <h2>Connection the<br> Future with Light</h2>
+</body>
+</html>

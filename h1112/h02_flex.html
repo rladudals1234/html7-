@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{padding:0;margin:0;list-style:none;}
+        #main{
+            background: #eee;
+            width: 700px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between; /* flex-start:첫지점배치, flex-end:끝지점배치, flex-center:가운데배치, space-around:모든항목 간격배치, space-between:끝점으로 간격배치(맨앞,맨뒤 공백없음 가로정렬) */
+            /*align-items: center;*/    /* center:가운데정렬, stretch:늘려서채워줌 height가 없어야함*/
+            flex-wrap: wrap;    /* wrap:여러줄표시, no-wrap:한줄표시, wrap-reverse:위쪽배치 */
+            align-content: space-between;   /* flex-start:세로정렬에서 위쪽맞춤, flex-end:아래맞춤, space-between:위쪽과 아래쪽 맞춤, space-around:모든 공백제공 위쪽 아래쪽 여백*/
+            /*flex-direction: row;*/ /* row:가로기준, column:세로기준정렬, row-reverse:가로기준역정렬 */
+        }
+        div{
+            width: 180px;
+            height: 80px;
+            border: 1px solid red;
+        }
+        /* order:순서배치바꾸기 */
+        /*.c01{
+            background: #f00;
+            order: 1;
+        }
+        .c02{
+            background: #0f0;
+            order: 4;
+        }
+        .c03{
+            background: #00f;
+            order: 2;
+        }
+        .c04{
+            background: #ff0;
+            order: 3;
+        }
+        .c05{
+            background: #f0f;
+            order: 5;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="c01">1</div>
+        <div class="c02">2</div>
+        <div class="c03">3</div>
+        <div class="c04">4</div>
+        <div class="c05">5</div>
+    </div>
+</body>
+</html>
