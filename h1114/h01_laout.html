@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", sans-serif;
+            background-color: white;
+        }
+
+        /* 상단 메뉴 */
+        .top-menu {
+            width: 100%;
+            text-align: right;
+            padding: 18px 90px;
+            font-size: 14px;
+            color: #666;
+            box-sizing: border-box;
+        }
+
+        .top-menu a {
+            text-decoration: none;
+            color: #666;
+            margin-left: 15px;
+        }
+
+        .top-menu a:hover {
+            color: #000;
+        }
+
+        /* 레이아웃 전체 */
+        .container {
+            width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 45px;
+        }
+
+        .form-area {
+            width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            height: 220px;
+            resize: none;
+        }
+
+        .btn-area {
+            width: 700px;
+            margin: 0 auto;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            font-size: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .btn-submit {
+            background-color: #005ccc;
+            color: white;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        /* 하단 */
+        .footer {
+            margin-top: 140px;
+            text-align: center;
+            color: #8a8a8a;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 메뉴 -->
+<div class="top-menu">
+    <a href="#">회원가입</a> |
+    <a href="#">로그인</a> |
+    <a href="#">주문조회</a> |
+    <a href="#">최근본상품</a>
+</div>
+
+<!-- 중앙 영역 -->
+<div class="container">
+    <h1>게시글 작성</h1>
+
+    <div class="form-area">
+        <input type="text" placeholder="작성자">
+        <input type="text" placeholder="제목">
+        <textarea placeholder="내용을 입력하세요."></textarea>
+    </div>
+
+    <div class="btn-area">
+        <button class="btn btn-submit">등록</button>
+        <button class="btn btn-cancel">취소</button>
+    </div>
+</div>
+
+<!-- 하단 -->
+<div class="footer">
+    Copyright © VLAST Shop. All rights reserved.
+</div>
+
+</body>
+</html>
