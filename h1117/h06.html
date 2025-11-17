@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on{
+            color: blue;
+        }
+        .off{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <label id="labelTxt1">아이디</label>
+        <input type="text" id="id" name="id"><br>
+        <label id="labelTxt2">비밀번호</label>
+        <input type="password" id="pw" name="pw"><br>
+        <label id="labelTxt3">비밀번호 확인</label>
+        <input type="password" id="pwchk" name="pwchk" onkeyup="pwBtn()"><br>
+        <span id="txt" style="color: red; font-size: 12px;"></span><br>
+        <input type="button" onclick="loginBtn()" value="로그인">
+    </form>
+    <script>
+        function loginBtn(){
+            var id = document.querySelector("#id");
+            var pw = document.querySelector("#pw");
+            var pwchk = document.querySelector("#pwchk");
+            if(id.value == '') {
+                id.focus();
+                alert(document.querySelector("#labelTxt1").innerText+"를 입력하세요.");
+            } else if(pw.value == '') {
+                pw.focus();
+                alert(document.querySelector("#labelTxt2").innerText+"를 입력하세요.");
+            } else if(pwchk.value == '') {
+                pwchk.focus();
+                alert(document.querySelector("#labelTxt3").innerText+"를 입력하세요.");
+            } else if(pw.value != pwchk.value) {
+                pwchk.focus();
+                const txtChk = "비밀번호와 비밀번호 확인을 동일하게 입력하세요.";
+                alert(txtChk);
+                document.querySelector("#txt").innerText = txtChk;
+            } else{
+                alert("로그인 진행");
+            }
+        }
+
+        function pwBtn(){
+            console.log(document.getElementById("pw").value);
+            console.log(document.getElementById("pwchk").value);
+            var pw = document.querySelector("#pw");
+            var pwchk = document.querySelector("#pwchk");
+            if(pw.value != pwchk.value){
+                document.querySelector("#txt").innerHTML = "<span class='off'>다릅니다.</span>";
+            }else{
+                document.querySelector("#txt").innerHTML = "<span class='on'>같습니다.</span>";
+            }
+        }
+    </script>
+</body>
+</html>

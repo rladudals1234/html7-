@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="d">과일목록</h1>
+    <ul>
+        <li>바나나</li>
+        <li id="c1" class="txt">배</li>
+        <li class="txt">사과</li>
+        <li>복숭아</li>
+        <h2 id="d02">
+            <ul>
+                <li>멜론</li>
+                <li>망고</li>
+            </ul>
+        </h2>
+        <li class="txt">수박</li>
+    </ul>
+    <script>
+        //색 변경
+        //document.querySelector(".txt").style.color = "red";
+        //스크립트에서 클래스의 색 변경
+        const items = document.querySelectorAll(".txt");
+        items.forEach(item => {
+            item.style.color = "red";
+        });
+        document.querySelector("#c1").style.color = "black";
+    </script>
+</body>
+</html>

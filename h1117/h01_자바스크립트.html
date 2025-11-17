@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트</title>
+        <!-- 자바스크립트 외부링크 -->
+        <script src="js/script.js"></script>
+        <script>
+            document.write("hello<br>");
+        </script>
+    </head>
+    <body>
+        <script>
+            //한줄주석, /* 여러줄 주석 */
+            /*
+            * 화면출력, prompt잘 사용하지 않음
+            //화면출력 : document.write
+            document.write("안녕하세요");
+            document.write("<h1>안녕하세요</h1>");
+            */
+            //alert("경고창");  //경고창 : alert
+            //prompt("입력창 : 숫자를 입력하세요.>>");  //입력창 : prompt
+            //변수선언 var,const,let
+            // "태그로 인식"
+            /*
+            var num = 0;
+            document.write(num+"<br>");
+            var input = prompt("입력창 : 숫자를 입력하세요.>>");
+            document.write("입력값 : ", input+"<br>");
+            //확인질문창 : confirm
+            confirm("게시글을 삭제하시겠습니까?");
+            */
+            /*let result = confirm("데이터를 삭제하시겠습니까?");
+            document.write("결과 : ",result);*/
+            //상수는 한번 값이 정해지면 수정불가, 사용은 가능
+            /*const A = 10;
+            A = 20;
+            document.write("결과:",a);*/
+            //콘솔출력 : console.log
+            console.log("콘솔창에 로그가 출력됨. document.write(): 화면출력");
+
+            let a;
+            document.write(typeof(a),"<br>");   //정의되지 않음 - undefined
+            let b = 100;
+            document.write(typeof(b),"<br>");   //number - 정수
+            let c = 1.5;
+            document.write(typeof(c),"<br>");   //number - 실수
+            let d = "안녕";
+            document.write(typeof(d),"<br>");   //string - 문자열
+        </script>
+    </body>
+    </html>
