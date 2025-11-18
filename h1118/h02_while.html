@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        var i=0;
+        while(i<10){
+            document.write(`${i} <br>`);
+            i++;
+        }
+        document.write(`<hr>`);
+        for(i=0; i<10; i++){
+            document.write(`${i} <br>`);
+        }
+        */
+        //문자열 숫자형 변환 -> Number()
+        //숫자형 문자열 변환 -> String()
+        //boolean형 변환 -> Boolean()
+        //실수형 정수형 변환 -> parseInt()
+        //정수형 실수형 변환 -> parseFloat()
+        //1~10까지 랜덤숫자 생성
+        //parseInt(Math.random()*10)+1  //1-10
+        //parseInt(Math.random()*45)+1  //1-45
+        //parseInt(Math.random()*45)  //0-44
+        //parseInt(Math.random()*50)+1  //1-50
+        /*
+        document.write((parseInt(Math.random()*10)+1),"<br>");
+        document.write((parseInt(Math.random()*10)+1),"<br>");
+        document.write((parseInt(Math.random()*10)+1),"<br>");
+        document.write((parseInt(Math.random()*10)+1),"<br>");
+        */
+        //랜덤숫자 맞추기 10번을 해서 맞으면 정답, 입력값이 높으면 낮은수 입력바람.
+        //정답, 입력값이 높으면 낮은수 입력바람
+        //입력값이 낮으면 높은수 입력바람
+        //정답 : 10
+        /*
+        var random = parseInt(Math.random()*100)+1;
+        for(i=0; i<10; i++){
+            var num = parseInt(prompt("1~100까지 숫자를 입력하시오."));
+            if(random > num){
+                alert(`${num}보다 높은 수입니다.`);
+                document.write(`${num}보다 높은 수입니다.<br>`);
+            }else if(random < num){
+                alert(`${num}보다 낮은 수입니다.`);
+                document.write(`${num}보다 낮은 수입니다.<br>`);
+            }else{
+                alert(`${num}은 정답입니다.`);
+                break;
+            }
+        }
+        */
+        var random = parseInt(Math.random()*100)+1;
+        var i = 0;
+        while(i<10){
+            var num = parseInt(prompt("1~100까지 숫자를 입력하시오."));
+            if(random > num){
+                alert(`${num}보다 높은 수입니다.`);
+                document.write(`${num}보다 높은 수입니다.<br>`);
+            }else if(random < num){
+                alert(`${num}보다 낮은 수입니다.`);
+                document.write(`${num}보다 낮은 수입니다.<br>`);
+            }else{
+                alert(`${num}은 정답입니다.`);
+                break;
+            }
+            i++;
+        }
+        document.write(`정답 : ${random}`);
+    </script>
+</body>
+</html>

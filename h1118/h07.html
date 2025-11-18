@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        #txt{
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function keyBtn(e){
+            if(e.keyCode == 13){
+                saveBtn();
+            }
+        }
+        function print(){
+            var sno = document.querySelector("#sno").value;
+            var name = document.querySelector("#name").value;
+            var kor = document.querySelector("#kor").value;
+            var eng = document.querySelector("#eng").value;
+            var mat = document.querySelector("#mat").value;
+            var total = parseInt(kor) + parseInt(mat) + parseInt(eng);
+            var avg = total / 3;
+            document.querySelector("#TEST"+sno).innerHTML = `<td>${sno}</td>
+                            <td>${name}</td>
+                            <td>${kor}</td>
+                            <td>${eng}</td>
+                            <td>${mat}</td>
+                            <td>${total}</td>
+                            <td>${avg}</td>
+                            <td>
+                                <button type="button" id="updateBtn" onclick="updateBtn(event,${sno})">수정</button>
+                                <button type="button" id="deleteBtn" onclick="deleteBtn(event,${sno})">삭제</button>
+                            </td>`;
+            inputClear();
+        }
+        function saveBtn(){
+            var sno = document.querySelector("#sno").value;
+            if(sno.length<=0){
+                document.querySelector("#sno").focus();
+                alert("학생번호를 입력하셔야 저장가능합니다.    ");
+                return;
+            }
+            var name = document.querySelector("#name").value;
+            var kor = document.querySelector("#kor").value;
+            var eng = document.querySelector("#eng").value;
+            var mat = document.querySelector("#mat").value;
+            var total = parseInt(kor) + parseInt(mat) + parseInt(eng);
+            var avg = total / 3;
+            document.querySelector("tbody").innerHTML += `<tr id='TEST${sno}'>
+                            <td>${sno}</td>
+                            <td>${name}</td>
+                            <td>${kor}</td>
+                            <td>${eng}</td>
+                            <td>${mat}</td>
+                            <td>${total}</td>
+                            <td>${avg}</td>
+                            <td>
+                                <button type="button" id="updateBtn" onclick="updateBtn(event,${sno})">수정</button>
+                                <button type="button" id="deleteBtn" onclick="deleteBtn(event,${sno})">삭제</button>
+                            </td>
+                        </tr>`;
+            inputClear();
+        }
+
+        function inputClear(){
+            document.querySelector("#sno").value = "";
+            document.querySelector("#name").value = "";
+            document.querySelector("#kor").value = "";
+            document.querySelector("#eng").value = "";
+            document.querySelector("#mat").value = "";
+        }
+
+        //삭제버튼함수
+        function deleteBtn(event, sno){
+            console.log("closestTest : ",event.target.closest("tr"));   //로그 안보이면 Golive나 F5로 서버 실행(캐시삭제 안해봄)
+            console.log("childNodes : ",event.target.closest("tr").childNodes);
+            console.log("childNodes[1] : ",event.target.closest("tr").childNodes[1]);
+            if(confirm(sno+"번 학생을 삭제하시겠습니까?")){
+                /*var tbody = document.querySelector("#tbody");
+                tbody.removeChild(event.target.parentNode.parentNode);*/
+                //document.querySelector("#TEST"+sno).remove();
+                //document.getElementById("TEST"+sno).remove();
+                event.target.closest("tr").remove();
+            }
+        }
+
+        function updateBtn(event,sno){
+            var name = document.querySelector("#name").value;
+            var kor = document.querySelector("#kor").value;
+            var eng = document.querySelector("#eng").value;
+            var mat = document.querySelector("#mat").value;
+            var total = parseInt(kor) + parseInt(mat) + parseInt(eng);
+            var avg = total / 3;
+            document.querySelector("#TEST"+sno).innerHTML = `<td>${sno}</td>
+                            <td>${name}</td>
+                            <td>${kor}</td>
+                            <td>${eng}</td>
+                            <td>${mat}</td>
+                            <td>${total}</td>
+                            <td>${avg}</td>
+                            <td>
+                                <button type="button" id="updateBtn" onclick="updateBtn(event,${sno})">수정</button>
+                                <button type="button" id="deleteBtn" onclick="deleteBtn(event,${sno})">삭제</button>
+                            </td>`;
+            inputClear();
+        }
+    </script>
+    <form action="#" method="get">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>국어</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>영어</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>수학</label>
+        <input type="text" id="mat" name="mat"><br>
+        <button type="button" onclick="saveBtn()">성적저장</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>합계</th>
+                <th>평균</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr id="TEST1">
+                <td>1</td>
+                <td>홍길동</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>300</td>
+                <td>100</td>
+                <td>
+                    <!-- <button type="button" id="updateBtn" onclick="updateBtn(event)">수정</button>
+                    <button type="button" id="deleteBtn" onclick="deleteBtn(event)">삭제</button> -->
+                    <button type="button" id="updateBtn" onclick="updateBtn(event,1)">수정</button>
+                    <button type="button" id="deleteBtn" onclick="deleteBtn(event,1)">삭제</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        #txt{
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <label>이름</label>
+    <input type="text" name="name" id="name" onkeyup="keyBtn(event)">
+    <button type="button" onclick="saveBtn()">저장</button>
+    <div id="txt"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>선택삭제</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td>홍길동</td>
+                <td><button type="button" onclick="delBtn('홍길동',0)">삭제</button></td>
+            </tr>
+            <tr>
+                <td>유관순</td>
+                <td><button type="button" onclick="delBtn('유관순',1)">삭제</button></td>
+            </tr>
+            <tr>
+                <td>이순신</td>
+                <td><button type="button" onclick="delBtn('이순신',2)">삭제</button></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        var arr = ['홍길동','유관순','이순신'];
+        //나중에 pkid(날짜+랜덤숫자+인덱스), 아이디, 패스워드, 이름, 나이, 직책, 전화번호, 이메일, 등록일, 수정일
+        /*var arr2 = [
+            {pkid:'202510010001', id:'1', password:'1234', name:'홍길동', age:22, dep:'admin', tel:'010-1234-5678', email:'hong@naver.com', regDt:'2025-10-01', chgDt:'2025-10-15'},
+            {pkid:'202510160001', id:'2', password:'1234', name:'유관순', age:27, dep:'manager', tel:'010-1234-8628', email:'yoo@naver.com', regDt:'2025-10-16', chgDt:'2025-11-01'},
+            {pkid:'202511010001', id:'3', password:'1234', name:'이순신', age:32, dep:'user', tel:'010-1684-5478', email:'lee@naver.com', regDt:'2025-11-01', chgDt:'2025-11-15'}
+        ];*/
+        print();
+        function saveBtn(){
+            var name = document.querySelector("#name").value;
+            if(name == ""){
+                document.querySelector("#name").focus();
+                alert("이름을 입력해주세요");
+                return;
+            }else if (arr.indexOf(name) != -1){
+                alert("이름이 이미 존재합니다.");
+                return;
+            }
+            if(confirm(name+"을 저장하시겠습니까?")){
+                arr.push(name);
+                alert("저장완료되었습니다.");
+                print();
+            }
+        }
+        function delBtn(name, index){
+            if(confirm(name+"을 삭제하시겠습니까?")){
+                arr.splice(index,1);
+                alert("삭제되었습니다.");
+                print();
+            }
+        }
+        function print(){
+            var txt = document.querySelector("#txt");
+            txt.innerText = arr;
+            var tbody = document.querySelector("#tbody");
+            tbody.innerHTML = "";
+            for(var i=0; i<arr.length; i++){
+                tbody.innerHTML += `<tr>
+                                        <td>${arr[i]}</td>
+                                        <td><button type="button" onclick="delBtn('${arr[i]}',${i})">삭제</button></td>
+                                    </tr>`;
+            }
+        }
+        function keyBtn(e){
+            if(e.keyCode == 13){
+                saveBtn();
+            }
+        }
+    </script>
+</body>
+</html>
