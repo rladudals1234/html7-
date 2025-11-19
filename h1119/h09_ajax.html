@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax통신</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        //자바스크립트 - 서버와 통신이 안됨.
+        //ajax - 서버와 통신가능.
+        //동기방식 - 1개씩 순차적
+        //비동기방식 - 각각 통신진행(쓰레드비슷)
+        $(function(){
+            $("#jBtn").on("click",function(){
+                $.ajax({
+                    //url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=12ecb840cd89ef9dc8e7812664674fd8771c3f918321b8f670f22e728c215c05&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",     //가져올 url주소
+                    url:"member1.json",
+                    type:"get",         //전송방식
+                    data:{},            //전송할 데이터(폼 시리얼...으로 form에 있는거 전송하거나 파라미터 넣어서 전송가능)
+                    dataType:"json",    //전송받을 데이터 - html,text,json,xml
+                    success:function(data){     //성공시 실행
+                        console.log(data);
+                        for(var i=0;i<data.length;i++){
+                            //$("#d01").append(data[i].first_name+"<br>");
+                            $("tbody").append(`<tr>
+                                                <td>${data[i].id}</td>
+                                                <td>${data[i].gender}</td>
+                                                <td>${data[i].first_name}</td>
+                                                <td>${data[i].email}</td>
+                                                <td>${data[i].gender}</td>
+                                                <td>${data[i].ip_address}</td>
+                                            </tr>`);
+                        }
+                    },
+                    error:function(e){           //실패시 실행
+                        console.log("error:",e);
+                        alert("실패");
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="d01"></div>
+    <button type="button" id="jBtn">확인</button>
+    <div>
+        <table>
+            <tr>
+                <th>아이디</th>
+                <th>성씨</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>성별</th>
+                <th>ip주소</th>
+            </tr>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

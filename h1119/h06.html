@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        #d01{
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+            position: fixed;
+            top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="d01"></div>
+    <script>
+        $(function(){
+            //마우스 위로 올렸을 때
+            $("#d01").mouseover(()=>{
+                $("#d01").css({"background-color":"yellow", "border":"5px solid pink",
+                "padding":"5px"});
+                //$("#d01").css("border","5px solid pink");
+            });
+
+            $("#d01").mouseout(()=>{
+                //$("#d01").css("background-color","blue");
+                //$("#d01").css("border","5px solid black");
+                $("#d01").css({"background-color":"blue", "border":"5px solid black",
+                "padding":"5px"});
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        body{
+            height: 2000px;
+            width: 2000px;
+        }
+        #d01{
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+            position: fixed;
+            top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="d01"></div>
+    <script>
+        $(function(){
+            $(window).on('scroll',(function(){
+                var sc_top = $(this).scrollTop();
+                var sc_left = $(this).scrollLeft();
+                $('#d01').text("높이:"+sc_top);
+                $('#d01').append("너비:"+sc_left);
+                console.log("높이:",sc_top);
+                console.log("너비:",sc_left);
+            }));
+        });
+    </script>
+</body>
+</html>

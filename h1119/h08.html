@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .c01{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .on{
+            background: yellow;
+        }
+        .off{
+            background: green;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#cBtn").click(()=>{
+                //$(".c01").toggleClass("on");
+                $(".c01").addClass("on");
+                $(".c01").removeClass("off");
+            });
+            $("#canBtn").click(()=>{
+                $(".c01").removeClass("on");
+                $(".c01").addClass("off");
+            });
+
+            /*$("input[type='text']").focus(()=>{
+                console.log(this);      //서버실행으로 확인
+                $(this).addClass("on");
+                //$("input[type='text']").addClass("on");
+            });*/
+            //자바스크립트 this, 제이쿼리 $(this)
+            //화살표함수에는 $(this)가 안됨.
+            //화살표함수에 $(this)를 사용하려면 (e) -> e.target으로 사용
+            $("input[type='text']").focus(function(){
+                console.log(this);
+                $(this).addClass("on");
+                //$("input[type='text']").addClass("on");
+            });
+            $("input[type='text']").focusout(function(){
+                $(this).removeClass("on");
+                //$("input[type='text']").removeClass("on");
+            });
+
+            $("#imgBtn").click(()=>{
+                $("img").attr("src","images/back3.jpg");    //background는 css
+            });
+        });
+
+        //함수
+        /*function aaa(){
+
+        }
+
+        //함수
+        const bbb = () => {
+
+        }*/
+    </script>
+</head>
+<body>
+    <img src="images/back1.jpg" alt=""><br>
+    <button type="button" id="imgBtn">변경</button><br>
+    <div class="c01"></div>
+    <button type="button" id="cBtn">확인</button>
+    <button type="button" id="canBtn">취소</button>
+    <br>
+    <input type="text" class="c00" name="no"><br>
+    <input type="text" class="c00" name="name"><br>
+    <input type="text" class="c00" name="kor"><br>
+    <input type="text" class="c00" name="eng"><br>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화진흥위원회api데이터</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        #txt{
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#takeBtn").on("click",function(){
+                console.log($("#form").serialize()+"&test=test등");
+                $.ajax({
+                    url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=12ecb840cd89ef9dc8e7812664674fd8771c3f918321b8f670f22e728c215c05&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+                    type:"get", //현 api주소에 /galleryList1뒤에 ?(처음은?로 시작)와 &로 파라미터 들어오고 있음 -> get방식
+                    data:{},
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data.response.body.items.item);
+                        $("#tbody").html("");
+                        var tour_data=data.response.body.items.item;
+                        for(var i=0;i<tour_data.length;i++){
+                            $("#tbody").append(`<tr>
+                                                <td>${tour_data[i].galContentId}</td>
+                                                <td>${tour_data[i].galTitle}</td>
+                                                <td>${tour_data[i].galCreatedtime}</td>
+                                                <td>${tour_data[i].galPhotographyLocation}</td>
+                                                <td>${tour_data[i].galPhotographer}</td>
+                                                <td>${tour_data[i].galSearchKeyword}</td>
+                                                <td><img src="${tour_data[i].galWebImageUrl}"></td>
+                                            </tr>`);
+                        }
+                    },
+                    error:function(e){           //실패시 실행
+                        console.log("error:",e);
+                        alert("실패");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button type="button" id="takeBtn">데이터가져오기</button>
+    <form action="#" method="get" id="form">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>국어</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>영어</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>수학</label>
+        <input type="text" id="math" name="math" onkeyup="enterBtn(event)"><br>
+        <button type="button" id="sbtn">성적저장</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>촬영일</th>
+                <th>촬영장소</th>
+                <th>작가</th>
+                <th>키워드</th>
+                <th>이미지</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script>
+    </script>
+</body>
+</html>

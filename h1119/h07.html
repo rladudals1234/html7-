@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        //배열관련 반복 메소드
+        $(function(){
+            let arr = [1,2,3,4,5];
+            //반복처리해서 값을 리턴해주는 함수(return있는 반복문)
+            let mapArr = $.map(arr,(v)=>{
+                return v*2;
+            });
+            console.log(arr);
+            console.log(mapArr);
+
+            //for문과 동일 - 배열을 순차적으로 진행해줌.(return은 없음)
+            $.each(arr,function(v){
+                console.log(v*2);
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
