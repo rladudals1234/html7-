@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생성적 프로그램</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        #txt{
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#takeBtn").on("click",function(){
+                $.ajax({
+                    url:"comment.json",
+                    type:"get",
+                    dataType:"json",
+                    timeout:76000,
+                    success:function(data){
+                        console.log(data);
+                        for(var i=0;i<data.length;i++){
+                            $("tbody").append(`<tr>
+                                                <td>${data[i].cno}</td>
+                                                <td>${data[i].id}</td>
+                                                <td>${data[i].cdate}</td>
+                                                <td>${data[i].ccontent}</td>
+                                                <td>${data[i].cpw}</td>
+                                            </tr>`);
+                        }
+                    },error:function(e){
+                        console.log(e);
+                        alert(e.responseText);
+                    }
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <button type="button" id="takeBtn">데이터가져오기</button>
+    <form action="#" method="get" id="form">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>아이디</label>
+        <input type="text" id="name" name="name"><br>
+        <label>날짜</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>내용</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>비밀번호</label>
+        <button type="button" id="sbtn">저장</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>아이디</th>
+                <th>날짜</th>
+                <th>내용</th>
+                <th>비밀번호</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script>
+    </script>
+</body>
+</html>
