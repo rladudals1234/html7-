@@ -43,6 +43,7 @@ $(document).ready(function() {
 												<a class="rebtn deleteBtn">삭제</a>
 											</li>
 										</ul>`);
+					c_count(1);
 				}
 			},error: function(e) {
 				console.log(e);
@@ -83,6 +84,7 @@ $(document).ready(function() {
 		$(this).closest("ul").find(".replyType").val("");
 		cno++;
 		alert("하단 댓글을 저장합니다.");
+		c_count(1);
 	});
 
 	const todayTime = function(){
@@ -106,28 +108,46 @@ $(document).ready(function() {
 	
 	var prevContent = "";
 	$(document).on("click",".updateBtn",function(e){
-		prevContent = $(e.target).parent().parent().html();
+		prevContent = $(e.target).parent().parent().html();		//이전내용 취소버튼용 임시저장
+		//const ul = $(this).closest("ul");	//delete처럼 ul로도 가능.
 		var name = $(e.target).parent().parent().find(".name").html();
 		var content = $(e.target).parent().parent().find(".txt").text();
 		$(e.target).parent().parent().html(`<li class="name">${name}</li>
 											<li class="txt"><textarea class="replyType">${content}</textarea></li>
 											<li class="btn">
-												<a class="rebtn sBtn">확인</a>
-												<a class="rebtn canBtn">취소</a>
+												<a class="rebtn uSaveBtn">저장</a>
+												<a class="rebtn cancelBtn">취소</a>
 											</li>`);
 	});
 
+	//3.수정버튼 클릭함수
+	/*$(document).on("click",".updateBtn",function(){
+		const ul = $(this).closest("ul");
+		let dataHtml = `
+		<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
+		<li class="txt"><textarea class="replyType"></textarea></li>
+		<li class="btn">
+			<a class="rebtn uSaveBtn">저장</a>
+			<a class="rebtn cancelBtn">취소</a>
+		</li>
+		`;
+		//수정화면태그 입력
+		$(this).closest("ul").html(dataHtml);
+	});*/
+
 	$(document).on("click",".deleteBtn",function(e){
-		if(confirm("삭제하시겠습니까?")){
-			$(e.target).parent().parent().remove();
+		const ul = $(this).closest("ul");
+		if(confirm(ul.attr("id")+"번 댓글을 삭제하시겠습니까?")){
+			//$(e.target).parent().parent().remove();
+			ul.remove();
 			alert("삭제완료되었습니다.");
+			c_count(0);
 		}
 	});
 
-	$(document).on("click",".sBtn",function(e){
-		//하나 textarea수정상태면 다른 곳 수정안되게 X
-		//보통은 DB에서 불러와서 사용(정규식으로 임시로 진행 - span삭제도중 에러발생 후 중단도 확인)
-		//console.log($(e.target).parent().parent().find(".name").html().replace(/<span[^>]*>.*?<\/span>/gi, ""));
+	$(document).on("click",".uSaveBtn",function(e){
+		alert("하단댓글을 수정합니다.");
+		//textarea수정상태면 다른 곳 수정안되게 X
 		var name = $(e.target).parent().parent().find(".name").html().replace(/<span[^>]*>.*?<\/span>/gi, "");
 		var content = $(e.target).parent().parent().find(".replyType").val();
 		$(e.target).parent().parent().html(`<li class="name">${name} <span>[${todayTime()}]</span></li>
@@ -139,12 +159,21 @@ $(document).ready(function() {
 		prevContent = "";
 	});
 
-	$(document).on("click",".canBtn",function(e){
-		//취소는 name등 가져오기 생략(이전 .sBtn 클릭이벤트에서 문자변경전 변수에 담거나 기타 방식으로)
-		//원래 ul로 복구(DB라면 새로고침)
+	//수정취소버튼클릭함수
+	$(document).on("click",".cancelBtn",function(e){
 		$(e.target).parent().parent().html(prevContent);
 		prevContent = "";
 	});
+
+	//댓글 총개수 변경함수
+	const c_count = function(flag){
+		let comment_count = Number($(".comment_count").text());
+		if(flag==1){ //댓글추가 경우
+			$(".comment_count").text(comment_count+1);
+		}else{       //댓글삭제 경우
+			$(".comment_count").text(comment_count-1);
+		}
+	}//c_count
 
 	//등록버튼클릭함수(this안됨)
 	/*const repltBtn = function(){
@@ -362,7 +391,7 @@ $(document).ready(function() {
 					<div class="replyWrite">
 						<ul>
 							<li class="in">
-								<p class="txt">총 <span class="orange">3</span> 개의 댓글이 달려있습니다.</p>
+								<p class="txt">총 <span class="orange comment_count">0</span> 개의 댓글이 달려있습니다.</p>
 								<p class="password">비밀번호&nbsp;&nbsp;<input type="password" class="replynum" /></p>
 								<textarea class="replyType replyTxt"></textarea>
 							</li>
