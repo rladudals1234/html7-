@@ -151,7 +151,6 @@ $(document).ready(function() {
 
 	$(document).on("click",".uSaveBtn",function(e){
 		alert("하단댓글을 수정합니다.");
-		//textarea수정상태면 다른 곳 수정안되게 X
 		var name = $(e.target).parent().parent().find(".name").html().replace(/<span[^>]*>.*?<\/span>/gi, "");
 		var content = $(e.target).parent().parent().find(".replyType").val();
 		$(e.target).parent().parent().html(`<li class="name">${name} <span>[${todayTime()}]</span></li>
