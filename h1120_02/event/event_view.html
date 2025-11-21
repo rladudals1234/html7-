@@ -61,7 +61,8 @@ $(document).ready(function() {
 			$(this).closest("ul").find(".replyType").focus();
 			alert("댓글을 입력하셔야 저장이 가능합니다.");
 			return;
-		}else if(cpw.length != 0){
+		}
+		if(cpw.length != 0){
 			//비밀번호 ul
 			$("#replybox").prepend(`<ul id="${cno}">
 										<li class="name">${"admin"} <span>[${todayTime()}]</span></li>
@@ -89,9 +90,9 @@ $(document).ready(function() {
 		let year = now.getFullYear();
 		let month = now.getMonth();
 		let day = now.getDate();
-		let hour = now.getHours();
-		let minute = now.getMinutes();
-		let second = now.getSeconds();
+		let hour = String(now.getHours()).padStart(2, '0');
+		let minute = String(now.getMinutes()).padStart(2, '0');
+		let second = String(now.getSeconds()).padStart(2, '0');
 		let millisecond = now.getMilliseconds();
 		return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 	}
@@ -103,7 +104,9 @@ $(document).ready(function() {
 		}
 	});
 	
+	var prevContent = "";
 	$(document).on("click",".updateBtn",function(e){
+		prevContent = $(e.target).parent().parent().html();
 		var name = $(e.target).parent().parent().find(".name").html();
 		var content = $(e.target).parent().parent().find(".txt").text();
 		$(e.target).parent().parent().html(`<li class="name">${name}</li>
@@ -121,9 +124,7 @@ $(document).ready(function() {
 		}
 	});
 
-	var prevContent = "";
 	$(document).on("click",".sBtn",function(e){
-		prevContent = $(e.target).parent().parent();
 		//하나 textarea수정상태면 다른 곳 수정안되게 X
 		//보통은 DB에서 불러와서 사용(정규식으로 임시로 진행 - span삭제도중 에러발생 후 중단도 확인)
 		//console.log($(e.target).parent().parent().find(".name").html().replace(/<span[^>]*>.*?<\/span>/gi, ""));
@@ -141,6 +142,8 @@ $(document).ready(function() {
 	$(document).on("click",".canBtn",function(e){
 		//취소는 name등 가져오기 생략(이전 .sBtn 클릭이벤트에서 문자변경전 변수에 담거나 기타 방식으로)
 		//원래 ul로 복구(DB라면 새로고침)
+		$(e.target).parent().parent().html(prevContent);
+		prevContent = "";
 	});
 
 	//등록버튼클릭함수(this안됨)
@@ -389,23 +392,7 @@ $(document).ready(function() {
 						</ul>
 						-->
 
-						<ul>
-							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
-							<li class="txt">대박!!! 이거 저한테 완전 필요한 이벤트였어요!!</li>
-							<li class="btn">
-								<a href="#" class="rebtn">수정</a>
-								<a href="#" class="rebtn">삭제</a>
-							</li>
-						</ul>
-						<ul>
-							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
-							<li class="txt">대박!!! 이거 저한테 완전 필요한 이벤트였어요!!</li>
-							<li class="btn">
-								<a href="#" class="rebtn">수정</a>
-								<a href="#" class="rebtn">삭제</a>
-							</li>
-						</ul>
-						<ul>
+						<ul id="1">
 							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
 							<li class="txt">대박!!! 이거 저한테 완전 필요한 이벤트였어요!!</li>
 							<li class="btn">
