@@ -108,6 +108,10 @@ $(document).ready(function() {
 	
 	var prevContent = "";
 	$(document).on("click",".updateBtn",function(e){
+		if(prevContent!=""){
+			alert("수정중인 사항을 진행해주세요.");
+			return;
+		}
 		prevContent = $(e.target).parent().parent().html();		//이전내용 취소버튼용 임시저장
 		//const ul = $(this).closest("ul");	//delete처럼 ul로도 가능.
 		var name = $(e.target).parent().parent().find(".name").html();
