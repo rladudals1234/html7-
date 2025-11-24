@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            
+        });
+
+        function aBtn(){
+            //https://wikidocs.net/21703
+            //정규표현식 : 문자열에서 특정문자 조합을 찾기위한 패턴
+            //패턴 시작 : / /
+            //^ : 시작
+            //$ : 끝
+            //[해당되는문자]
+            //[0123456789],[0-9],\d : 대괄호 안의 숫자만, d도 숫자
+            //[ab*&], [a-zA-Z], [0-9a-zA-Z],[ㄱ-ㅎ가-힣],[!@#$%^&*()] : 대괄호안에 ^는 not
+            //{시작자리, 끝자리}
+            //test() => 맞으면 true, 틀리면 flase
+            //let reg_age = /^[a-zA-Z!@#$%^&*()][0-9]{4}$/;
+            //a2025
+            //let reg_age = /^[a]{1}[0-9]{4}$/;
+            //010-1111-1111
+            //let reg_age = /^[01]{3}-[0-9]{4}-[0-9]{4}$/;
+            //let reg_age = /^01[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
+            //let reg_age = /^01.{1}-[0-9]{4}-[0-9]{4}$/;
+            //아이디 첫문자는 영문소문자만 가능, 영, 숫자가능 3자리 이상, 10자리 이하
+            let reg_age = /^[a-z]{1}\w{2,9}$/;
+            if(reg_age.test($("#age").val())){
+                alert("가능")
+            }else{
+                alert("불가능")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label>년도</label>
+        <input type="text" id="age" name="age" placeholder="년도를4자리 입력하세요."><br>
+        <input type="button" id="ageBtn" onclick="aBtn()" value="나이확인"><br>
+    </form>
+</body>
+</html>

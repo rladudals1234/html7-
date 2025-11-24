@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $("#loginBtn").on("click", function(e){
+                //페이지 이동 $("#form1").serialize()   //get방식에서만 ?,&로 url에서 사용
+                location.href = `h02.html?${$("#form1").serialize()}`;  //폼에 모든 input데이터 전달
+                //location.href = `h02.html?id=${$("#id").val()}&pw=${$("#pw").val()}`;
+                /*$.ajax({
+                    url: "h02.html",
+                    type: "get",
+                    dataType: "json",
+                    data: $("#form1").serialize(),
+                    success: function(data){
+                        console.log(data);
+                    },error: function(e){
+                        console.log(e);
+                    }
+                });*/
+                //ajax는 이동하지 않고 통신만
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="h02.html" method="get" id="form1">
+        <input type="text" id="id" name="id" placeholder="아이디를 입력하세요."><br>
+        <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요."><br>
+        <input type="button" id="loginBtn" value="로그인">
+    </form>
+</body>
+</html>

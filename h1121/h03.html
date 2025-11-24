@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        //제이쿼리선언
+        /*$(function(){
+            //jquery내에 있는 함수 호출 가능
+            //jquery선언부 외에서 호출하면 호출이 안됨.
+            ageBtn();
+            const ageBtn2 = function(){
+                alert("제이쿼리선언 밖에 있는 함수");
+            }
+        });
+        //자바스크립트
+        function ageBtn(){
+            ageBtn2();  //호출불가
+        }*/
+        //제이쿼리선언
+        $(function(){
+            /*$("#age").keyup(function(e){
+                if(e.keyCode == 13){
+                    $("#ageBtn").trigger("click");
+                }
+            })*/
+            $("#ageBtn").on("click", function(e){
+                if($("#age").val().trim().length < 5){
+                    alert("5자리 이상 입력하세요.");
+                    return;
+                }
+                if(!isNaN($("#age").val().substr(1))){
+                    alert("문자를 입력하셔야 됩니다.")
+                }
+                if(isNaN($("#age").val().substr(1))){
+                    alert("숫자를 입력하셔야 됩니다.")
+                }
+                //첫글자는 영문자, 숫자4개를 입력하시오.
+                let age = $("#age").val();
+                //1. 5자리인지 확인
+                //2. 첫글자가 문자인지 확인
+                //3. 2~5번째까지 숫자인지 확인
+                //a2025
+                console.log(age.substr(0,1));   //1번째 문자 - a
+                console.log(age.substr(1));     //1번부터 끝까지 - 2025
+                console.log(age.substr(1,2));   //1번째 2개를 자르기 - 20
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label>년도</label>
+        <input type="text" id="age" name="age" placeholder="년도를4자리 입력하세요."><br>
+        <input type="button" id="ageBtn" value="나이확인"><br>
+    </form>
+</body>
+</html>
